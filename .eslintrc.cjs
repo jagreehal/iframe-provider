@@ -6,7 +6,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   extends: [
-    '../../.eslintrc.cjs',
     'next/core-web-vitals',
     'plugin:tailwindcss/recommended',
     'plugin:valtio/recommended',
