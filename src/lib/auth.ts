@@ -33,6 +33,7 @@ export function setSessionCookie(value: string, options = {}) {
     expires,
     httpOnly: true,
     sameSite: 'none',
+    secure: true,
     ...options,
   });
 }
@@ -114,6 +115,7 @@ export async function updateSession(request: NextRequest) {
       httpOnly: true,
       expires: parsed.expires,
       sameSite: 'none',
+      secure: true,
     });
   } catch (error: any) {
     deleteSession();
