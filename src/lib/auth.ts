@@ -32,7 +32,7 @@ export function setSessionCookie(value: string, options = {}) {
   cookies().set('session', value, {
     expires,
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: 'none',
     ...options,
   });
 }
@@ -113,7 +113,7 @@ export async function updateSession(request: NextRequest) {
     res.cookies.set('session', _session, {
       httpOnly: true,
       expires: parsed.expires,
-      sameSite: 'lax',
+      sameSite: 'none',
     });
   } catch (error: any) {
     deleteSession();
